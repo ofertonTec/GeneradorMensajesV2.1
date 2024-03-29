@@ -114,11 +114,11 @@ function mostrarMensaje(cliente) {
         + "\n001104024900000031 - (Dolares)"
         + "\n01140200490000003152 (Dolares)";
     var promesaVentanilla = "Sr(a) *" + cliente.nombres + "* Según lo acordado telefónicamente usted se compromete a efectuar el pago correspondiente a S/. *" + cliente.montoPago + "* el día *" + cliente.fechaPago + "* del producto *" + cliente.tipoProducto + "*  Número de cuenta *" + cliente.numeroProducto + "*.\n"
-        + "\nRealice el pago en la agencia del *Banco BBVA* más cercana, donde se dirige a ventanilla indicando el *código pago legal* 248 (Soles) o 249 (Dólares) adicionando el número de su DNI o RUC del titular de la cuenta."
-        + "\n\nQuedo a la espera del envió del voucher a través de este medio, gracias.";
+        + "\nRealice el pago en la agencia del *Banco BBVA* más cercana, donde se dirige a ventanilla indicando el *código pago legal 248* adicionando el número de *su DNI del titular de la cuenta*."
+        + "\n\nQuedo a la espera del envió del voucher a través de este medio. \n\nGracias.";
     var vencida = "Sr(a) *" + cliente.nombres + "* le recordamos que tiene una promesa incumplida con   " + cliente.entidad + " por el monto de S/. *" + cliente.montoPago + "* .\n\nPara que Ud. no pierda los beneficios y su deuda no genere mayor interés, confírmenos su reprogramación para el día de *HOY*. \n\nGracias."
 
-    var recordatorio = "Que tal Sr(a) *" + cliente.nombres + "* , " + cliente.entidad + " le recuerda que tiene un compromiso pendiente para el *" + cliente.fechaPago + "* , por el importe de S/.*" + cliente.montoPago + "* , evite el recálculo de su deuda pagando en la fecha establecida. \n\nCualquier inconveniente con su pago me informa para poder ayudarle. \n\nQuedo a la espera de la foto de su comprobante para el ajuste de su pago. \nSaludos Cordiales.";
+    var recordatorio = "Que tal Sr(a) *" + cliente.nombres + "* , " + cliente.entidad + " le recuerda que tiene un compromiso pendiente para el *" + cliente.fechaPago + "* , por el importe de S/.*" + cliente.montoPago + "* , evite el recálculo de su deuda pagando en la fecha establecida.\n\nRealice el pago en la agencia del *Banco BBVA* más cercana, donde se dirige a ventanilla indicando el *código pago legal 248* adicionando el número de *su DNI del titular de la cuenta*.\n\nEnvíar a la brevedad posible la foto de su comprobante para la conformidad. \n\nSaludos Cordiales.";
 
     var campaña = cliente.nombres + ', *' + cliente.entidad + '*, tiene un Dscto Especial *PRE_APROBADO*, cancela tu Producto *' + cliente.tipoProducto + '* nro *' + cliente.numeroProducto + '*, con *S/.' +
         cliente.montoPago + '* , Previa evaluación, \n\n*ACTIVALO* comunicándote por este medio.\n\nTramite su *CONSTANCIA DE NO ADEUDO* y Evite seguir manteniendo un reporte negativo en las centrales de riesgo.\n\nDscto válido hasta: *' + cliente.fechaPago + '*'
