@@ -11,15 +11,20 @@
         integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
         crossorigin="anonymous"></script>
 
-    <title>Generador Mensajes</title>
+    <title>Gestión y mensajería</title>
 </head>
-
 <body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-black bg-light">
+            <img src="img/logo1.png" alt="" width="70px"><br>
+            <a class="navbar-brand" href="#"> Gestión y mensajería</a>
+        </nav>
+      </div>
     <div class="container-fluid mt-4">
         <div class="row">
             <div class="col-md-8 mb-3">
-                <form class="form-control bg-light" action="" id="formulario">
-                    <div class="d-flex flex-wrap justify-content-between">
+                <form class="form-control bg-light" action="" id="formulario" >
+                    <div class="d-flex flex-wrap justify-content-between" >
                         <div class="form-group ">
                             <label class="form-label" for="entidad">Entidad</label>
                             <select class="form-control" name="entidad" id="entidad">
@@ -33,23 +38,24 @@
                             <label for="tipoGestion" class="form-label">Tipo Gestión</label>
                             <select class="form-control" name="tipoGestion" id="tipoGestion">
                                 <option value="">Seleccione</option>
+                                <option value="UR-Agencia">UR:Promesa Agencia</option>
+                                <option value="UR-Interbancaria">UR:Promesa Ventanilla</option>
                                 <option value="TR">TR:Transado</option>
-                                <option value="UR">UR:Promesa</option>
                                 <option value="TU">TU:Volver Llamar</option>
-                            </select>
-                        </div>
-                        <div class="form-group" id="tipoMensajeDiv">
-                            <label class="form-label" for="tipoMensaje">Tipo Mensaje</label>
-                            <select class="form-control" name="tipoMensaje" id="tipoMensaje">
-                                <option value="promesa1">PDP Ventanilla</option>
-                                <option value="promesa2">PDP Interbancaria</option>
                                 <option value="campaña">Campaña</option>
                                 <option value="recordatorio">Recordatorio</option>
                                 <option value="vencida">Vencida</option>
                                 <option value="solucion">Buscar Contacto</option>
                                 <option value="relampago">Camp.Relampago</option>
-
                             </select>
+                        </div>
+                        <div class="form-group" id="codigoDiv">
+                            <label for="form-label" for="codigo">Codigo Cliente</label>
+                            <input class="form-control" type="number" name="codigo" id="codigo">
+                        </div>
+                        <div class="form-group" id="clienteDiv">
+                            <label class="form-label" for="cliente">Cliente</label>
+                            <input type="text" class="form-control" name="cliente" id="cliente">
                         </div>
                         <div class="form-group" id="tipoProductoDiv">
                             <label class="form-label" for="tipo">Tipo Producto</label>
@@ -58,29 +64,21 @@
                                 <option value="tarjeta">Tarjeta</option>
                             </select>
                         </div>
-                        <div class="form-group" id="clienteDiv">
-                            <label class="form-label" for="cliente">Cliente</label>
-                            <input type="text" class="form-control" name="cliente" id="cliente">
-                        </div>
-                        <div class="form-group" id="fechaDiv">
-                            <label class="form-label" for="fecha">Fecha</label>
-                            <input type="date" class="form-control" name="fecha" id="fecha">
-                        </div>
-                        <div class="form-group" id="telefonoDiv">
-                            <label class="form-label" for="telefono">WhatsApp</label>
-                            <input type="number" class="form-control" name="telefono" id="telefono">
+                        <div class="form-group" id="numeroProductoDiv">
+                            <label class="form-label" for="numero">Numero Producto</label>
+                            <input type="number" class="form-control" name="numero" id="numero">
                         </div>
                         <div class="form-group" id="montoDiv">
                             <label class="form-label" for="monto">Monto S/.</label>
                             <input type="number" class="form-control" name="monto" id="monto">
                         </div>
-                        <div class="form-group" id="numeroProductoDiv">
-                            <label class="form-label" for="numero">Numero Producto</label>
-                            <input type="number" class="form-control" name="numero" id="numero">
+                        <div class="form-group" id="telefonoDiv">
+                            <label class="form-label" for="telefono">WhatsApp</label>
+                            <input type="number" class="form-control" name="telefono" id="telefono">
                         </div>
-                        <div class="form-group" id="codigoDiv">
-                            <label for="form-label" for="codigo">Codigo Cliente</label>
-                            <input class="form-control" type="number" name="codigo" id="codigo">
+                        <div class="form-group" id="fechaDiv">
+                            <label class="form-label" for="fecha">Fecha</label>
+                            <input type="date" class="form-control" name="fecha" id="fecha">
                         </div>
                         <div class="form-group" id="descripcionDiv">
                             <label for="form-label" for="descripcion">Descripción</label>
