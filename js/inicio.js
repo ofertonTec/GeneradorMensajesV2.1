@@ -125,7 +125,66 @@ function mostrarMensaje(cliente) {
 
     var solucion = "*Banco BBVA*, estimado(a) *" + cliente.nombres + "* confiamos en que se encuentre bien.\nNos comunicamos respecto a la *deuda pendiente* que mantiene con el *Banco BBVA*. Valoramos su compromiso y estamos dispuestos a trabajar juntos para encontrar una solución mutuamente beneficiosa. \n\nEs importante mencionar que, de no recibir respuesta en un plazo razonable, nos veremos en la obligación de evaluar *medidas legales disponibles* para recuperar la deuda en su totalidad. Preferimos evitar este camino y llegar a un *acuerdo amigable* .\n\nLa resolución de esta deuda contribuirá a mejorar su *historial crediticio* y *acceso a futuros créditos*, por lo mismo le instamos a ponerse en contacto a la brevedad posible para discutir opciones de pago y resolver esta situación de manera efectiva.\n\n *Agradecemos su atención y cooperación*.";
     var relampago = "*Banco BBVA* tiene un descuento especial *pre aprobado*, cancela tu producto comunicándote por este medio.\n\nTramite su *constancia de no adeudo* y evite seguir manteniendo un reporte negativo en las centrales de riesgo.\n\nDescuento válido solo por 24 horas.";
-    var transado = "Buen día estimado(a), le saluda *Joel Llacsahuache Copia*, de *Consultores Legales Asociados S.A* con RUC: *20266227192*, por encargo del *Banco BBVA*.\n\nSoy el encargado de su cuenta y estoy a su  dispocisión para juntos encontrar soluciones de pago, acordes a su situación para evitar las posibles acciones legales que pueda tomar el banco por el tiempo de atraso de su deuda.\n\nSaludos.";
+    var transado = "Buen día estimado(a), le saluda *Joel Llacsahuache Copia*, de *Consultores Legales Asociados S.A* con RUC: *20266227192*, por encargo del *Banco BBVA*.\n\nSoy el encargado de su cuenta y estoy a su  disposición para juntos encontrar soluciones de pago, acordes a su situación para evitar las posibles acciones legales que pueda tomar el banco por el tiempo de atraso de su deuda.\n\nSaludos.";
+
+    var recepcionVoucher = "Buen día estimado(a), hemos recibido la foto del comprobante del pago realizado.\nLuego de *3-10 días hábiles* después de haber enviado la foto del voucher, recibirá en su correo electrónico el *Contrato de Transacción Extrajudicial y Condonación* para que los descargue, imprima, firme y los envié al correo desde donde se le envió.\n\nTiene un plazo máximo de *10 días hábiles* que  envié los documentos firmados al correo.\n\nUna vez que envíe los documentos firmados, en un plazo de *3-7 días hábiles* le estarán enviando la *Carta de no adeudo* a su correo electrónico.\n*Por favor indicar un correo electrónico para remitirle la información dentro del plazo establecido*\n\nSaludos.";
+    var pedirDocumento = "Estimado/a cliente, para garantizar la seguridad de su cuenta ¿Podría proporcionar su DNI/RUC ,por favor?\n\nEsto nos ayudará a brindarle información más detallada.\n\nGracias por su comprensión.";
+    var sinInformacion = "No nos figura información con los datos brindados.\n\nDisculpe la confusión. Nuestro mensaje anterior estaba destinado al titular de la cuenta.\nSi no es el titular, por favor, ignore este mensaje. Indique *EQUIVOCADO* para retirar su número de la base de datos.\n\n¡Gracias por su comprensión!.";
+    var transfBanInter = "Si va a realizar el pago por trasferencia bancaria o interbancaria, validar antes de hacer el deposito se realice a la cuenta del:\n*Banco BBVA Perú*  e indicarme el nombre del titular de la cuenta de origen , para enviar a aplicar el pago.";
+    var pagoVentanilla = "Realice el pago en la agencia del *Banco BBVA* más cercana, donde se dirige a ventanilla indicando el *código pago legal* 248 adicionando el número de *su DNI del titular de la cuenta*.";
+    var pedirVoucher = "Buen día estimado/a , no olvidar remitir el voucher del pago realizado para la conformidad.\n\nSaludos.";
+    var solicitarRespuesta = "Buen día estimado/a , necesitamos una respuesta a la brevedad posible, para ayudarlo a  solucionar su deuda que mantiene pendiente con el *Banco BBVA* .\n\nComuníquese por este medio.";
+    var cartaCampaña = "*043325003*  Porfavor remitir carta campaña al correo y por este medio. Gracias.";
+    var cartaCampañaManual = "*DORIS DOMINGUEZ ESPINOZA [043431559]*\n\nMonto negociado : *S/.3800*\n\n1° abono :  S./.12000 Fecha  14-03-2024\n2° abono :  S./.5292 Fecha    30-04-2024\n3° abono :  S./.5292 Fecha    30-05-2024\n\nPorfavor remitir carta campaña por este medio y al correo: , porfavor";
+    var uniProducto = "*WILFREDO FLORES CASTREJON*\n\n*Banco BBVA*  Cancela  tu\n\nPRODUCTO *PRÉSTAMOS* nro de cuenta *001108149602643177* con *S/.1382*\n\nComuniquese con su asesor a cargo: Sr. Joel Llacsahuache Copia\n\nSaludos.";
+    var multiProducto = "*ALTERNA BUSINESS SAC*\n\n*Banco BBVA*  Cancela  tus productos:\n\n*PRÉSTAMOS*   nro de cuenta *001104379601937852* con  :  *S/.8399*\n*TARJETAS*   nro de cuenta *001104379602053672* con  : *S/.1600*\n\nComuníquese para gestionar su pago, por este medio.\n\nSaludos.";
+    var pagoTransferencia = "*Cod. Deudor*: 043328908\n*Nombre titular* : CARLOS DAVID FELIPE GUERRERO\n*Dni*: 71044564\n*Cta*:  001101609600233724\n*Código central*: 26762486\n*Interb./banc./agente*: TRANSF.INTERBANCARIA INTERBANK\n*Fecha de pago*: 08/03/2024\n*Monto pagado*: S/.1000.00\n*Titular cuenta*: CARLOS DAVID FELIPE GUERRERO";
+
+
+    document.getElementById('mensajesEsta').addEventListener('change', function (event) {
+        var mensajesEstand = event.target.value;
+        if (mensajesEstand == "rv") {
+            mensaje = recepcionVoucher;
+            mensajeMostrar.innerHTML = recepcionVoucher;
+        }else if(mensajesEstand == "pd"){
+            mensaje = pedirDocumento;
+            mensajeMostrar.innerHTML = pedirDocumento;
+        }else if(mensajesEstand == "si"){
+            mensaje = sinInformacion;
+            mensajeMostrar.innerHTML = sinInformacion;
+        }else if(mensajesEstand == "tbi"){
+            mensaje = transfBanInter;
+            mensajeMostrar.innerHTML = transfBanInter;
+        }else if(mensajesEstand == "pv"){
+            mensaje = pagoVentanilla;
+            mensajeMostrar.innerHTML = pagoVentanilla;
+        }else if(mensajesEstand == "sv"){
+            mensaje = pedirVoucher;
+            mensajeMostrar.innerHTML = pedirVoucher;
+        }else if(mensajesEstand == "sr"){
+            mensaje = solicitarRespuesta;
+            mensajeMostrar.innerHTML = solicitarRespuesta;
+        }else if(mensajesEstand == "cc"){
+            mensaje = cartaCampaña;
+            mensajeMostrar.innerHTML = cartaCampaña;
+        }else if(mensajesEstand == "ccm"){
+            mensaje = cartaCampañaManual;
+            mensajeMostrar.innerHTML = cartaCampañaManual;
+        }else if(mensajesEstand == "iup"){
+            mensaje = uniProducto;
+            mensajeMostrar.innerHTML = uniProducto;
+        }else if(mensajesEstand == "imp"){
+            mensaje = multiProducto;
+            mensajeMostrar.innerHTML = multiProducto;
+        }else if(mensajesEstand == "rvta"){
+            mensaje = pagoTransferencia;
+            mensajeMostrar.innerHTML = pagoTransferencia;
+        }else{
+            mensaje = "";
+            mensajeMostrar.innerHTML = "";
+        }
+    });
+
     if (cliente.tipoGestion == "UR-Agencia") {
         mensaje = promesaVentanilla;
         mensajeMostrar.innerHTML = promesaVentanilla;
@@ -211,82 +270,96 @@ var montoDiv = document.getElementById('montoDiv');
 var tipoGestionDiv = document.getElementById("tipoGestionDiv");
 var codigoDiv = document.getElementById('codigoDiv');
 var descripcionDiv = document.getElementById('descripcionDiv');
+var tipoMensajesDiv = document.getElementById('mensajesDiv');
 
 document.getElementById('tipoGestion').addEventListener('change', function (event) {
     var tipoGestionInput = event.target.value;
     if (tipoGestionInput == "TR" || tipoGestionInput == "TU") {
-        fechaDiv.style.display="block"; 
-        telefonoDiv.style.display="block"; 
-        tipoProductoDiv.style.display="none"; 
-        numeroProductoDiv.style.display="none"; 
-        clienteDiv.style.display="none"; 
-        montoDiv.style.display="none"; 
-        tipoGestionDiv.style.display="block"; 
-        codigoDiv.style.display="block"; 
-        descripcionDiv.style.display="block";
+        fechaDiv.style.display = "block";
+        telefonoDiv.style.display = "block";
+        tipoProductoDiv.style.display = "none";
+        numeroProductoDiv.style.display = "none";
+        clienteDiv.style.display = "none";
+        montoDiv.style.display = "none";
+        tipoGestionDiv.style.display = "block";
+        codigoDiv.style.display = "block";
+        descripcionDiv.style.display = "block";
+        tipoMensajesDiv.style.display = "none";
 
     } else if (tipoGestionInput == 'recordatorio') {
-        fechaDiv.style.display="block"; 
-        telefonoDiv.style.display="block"; 
-        tipoProductoDiv.style.display="none"; 
-        numeroProductoDiv.style.display="none"; 
-        clienteDiv.style.display="block"; 
-        montoDiv.style.display="block"; 
-        tipoGestionDiv.style.display="block"; 
-        codigoDiv.style.display="none"; 
-        descripcionDiv.style.display="none";
+        fechaDiv.style.display = "block";
+        telefonoDiv.style.display = "block";
+        tipoProductoDiv.style.display = "none";
+        numeroProductoDiv.style.display = "none";
+        clienteDiv.style.display = "block";
+        montoDiv.style.display = "block";
+        tipoGestionDiv.style.display = "block";
+        codigoDiv.style.display = "none";
+        descripcionDiv.style.display = "none";
+        tipoMensajesDiv.style.display = "none";
 
     } else if (tipoGestionInput == "campaña") {
-        fechaDiv.style.display="block"; 
-        telefonoDiv.style.display="block"; 
-        tipoProductoDiv.style.display="block"; 
-        numeroProductoDiv.style.display="block"; 
-        clienteDiv.style.display="block"; 
-        montoDiv.style.display="block"; 
-        tipoGestionDiv.style.display="block"; 
-        codigoDiv.style.display="none"; 
-        descripcionDiv.style.display="none";
+        fechaDiv.style.display = "block";
+        telefonoDiv.style.display = "block";
+        tipoProductoDiv.style.display = "block";
+        numeroProductoDiv.style.display = "block";
+        clienteDiv.style.display = "block";
+        montoDiv.style.display = "block";
+        tipoGestionDiv.style.display = "block";
+        codigoDiv.style.display = "none";
+        descripcionDiv.style.display = "none";
+        tipoMensajesDiv.style.display = "none";
     } else if (tipoGestionInput == "vencida") {
-        fechaDiv.style.display="none"; 
-        telefonoDiv.style.display="block"; 
-        tipoProductoDiv.style.display="none"; 
-        numeroProductoDiv.style.display="none"; 
-        clienteDiv.style.display="block"; 
-        montoDiv.style.display="block"; 
-        tipoGestionDiv.style.display="block"; 
-        codigoDiv.style.display="none"; 
-        descripcionDiv.style.display="none";
+        fechaDiv.style.display = "none";
+        telefonoDiv.style.display = "block";
+        tipoProductoDiv.style.display = "none";
+        numeroProductoDiv.style.display = "none";
+        clienteDiv.style.display = "block";
+        montoDiv.style.display = "block";
+        tipoGestionDiv.style.display = "block";
+        codigoDiv.style.display = "none";
+        descripcionDiv.style.display = "none";
+        tipoMensajesDiv.style.display = "none";
     } else if (tipoGestionInput == "solucion") {
-        fechaDiv.style.display="none"; 
-        telefonoDiv.style.display="block"; 
-        tipoProductoDiv.style.display="none"; 
-        numeroProductoDiv.style.display="none"; 
-        clienteDiv.style.display="block"; 
-        montoDiv.style.display="none"; 
-        tipoGestionDiv.style.display="block"; 
-        codigoDiv.style.display="none"; 
-        descripcionDiv.style.display="none"; 
+        fechaDiv.style.display = "none";
+        telefonoDiv.style.display = "block";
+        tipoProductoDiv.style.display = "none";
+        numeroProductoDiv.style.display = "none";
+        clienteDiv.style.display = "block";
+        montoDiv.style.display = "none";
+        tipoGestionDiv.style.display = "block";
+        codigoDiv.style.display = "none";
+        descripcionDiv.style.display = "none";
+        tipoMensajesDiv.style.display = "none";
 
     } else if (tipoGestionInput == "relampago") {
-        fechaDiv.style.display="none"; 
-        telefonoDiv.style.display="block"; 
-        tipoProductoDiv.style.display="none"; 
-        numeroProductoDiv.style.display="none"; 
-        clienteDiv.style.display="none"; 
-        montoDiv.style.display="none"; 
-        tipoGestionDiv.style.display="block"; 
-        codigoDiv.style.display="none"; 
-        descripcionDiv.style.display="none"; 
+        fechaDiv.style.display = "none";
+        telefonoDiv.style.display = "block";
+        tipoProductoDiv.style.display = "none";
+        numeroProductoDiv.style.display = "none";
+        clienteDiv.style.display = "none";
+        montoDiv.style.display = "none";
+        tipoGestionDiv.style.display = "block";
+        codigoDiv.style.display = "none";
+        descripcionDiv.style.display = "none";
+        tipoMensajesDiv.style.display = "none";
 
     } else {
-        fechaDiv.style.display="block"; 
-        telefonoDiv.style.display="block"; 
-        tipoProductoDiv.style.display="block"; 
-        numeroProductoDiv.style.display="block"; 
-        clienteDiv.style.display="block"; 
-        montoDiv.style.display="block"; 
-        tipoGestionDiv.style.display="block"; 
-        codigoDiv.style.display="block"; 
-        descripcionDiv.style.display="block"; 
+        fechaDiv.style.display = "block";
+        telefonoDiv.style.display = "block";
+        tipoProductoDiv.style.display = "block";
+        numeroProductoDiv.style.display = "block";
+        clienteDiv.style.display = "block";
+        montoDiv.style.display = "block";
+        tipoGestionDiv.style.display = "block";
+        codigoDiv.style.display = "block";
+        descripcionDiv.style.display = "block";
+        tipoMensajesDiv.style.display = "block";
     }
+
+    /*Generador de mensajes*/
+    document.getElementById('btnGenerarMensajes').addEventListener('change', function (event) {
+        var tipoMensajeGenerado = event.target.value;
+        alert(tipoMensajeGenerado);
+    });
 })

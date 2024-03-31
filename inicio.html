@@ -79,10 +79,31 @@
                             <label class="form-label text-white" for="fecha">Fecha</label>
                             <input type="date" class="form-control" name="fecha" id="fecha">
                         </div>
+                        <div class="form-group" id="mensajesDiv">
+                            <label for="mensajes" class="form-label text-white" >Generador Mensajes</label>
+                            <select class="form-control" name="mensajes" id="mensajesEsta">
+                                <option value="">Seleccione</option>
+                                <option value="rv">Recepcion Voucher</option>
+                                <option value="pd">Pedir DNI/RUC</option>
+                                <option value="si">Sin informacion</option>
+                                <option value="tbi">Transf.Bancaria/Interbancaria</option>
+                                <option value="pv">Pago Ventanilla</option>
+                                <option value="sv">Pedir voucher</option>
+                                <option value="sr">Solicitar Respuesta</option>
+                                <option value="cc">Carta Campaña</option>
+                                <option value="ccm">Carta Campaña Manual</option>
+                                <option value="iup">Informacion UniProducto</option>
+                                <option value="imp">Informacion MultiProducto</option>
+                                <option value="rvta">Reporte Voucher Transf/Agente</option>
+                               <!-- <option value="relampago">Camp.Relampago</option>-->
+                            </select>
+                        </div>
                         <div class="form-group" id="descripcionDiv">
                             <label class="form-label text-white" for="descripcion">Descripción</label>
                             <textarea class="form-control" id="descripcion"></textarea>
                         </div>
+                        
+                        
                     </div>
                     <div>
                         <input type="submit" class="btn btn-primary" id="btnEnviar" value="Generar">
@@ -103,6 +124,8 @@
                 <span id="respuesta"></span>
             </div>
         </div>
+
+        
         <div class="container mt-4">
             <div class="table-bordered table-sm">
                 <table class="table" id="miTabla">
