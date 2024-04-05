@@ -13,149 +13,168 @@
 
     <title>Gestión y mensajería</title>
 </head>
+
 <body style="background: url(img/fondo.jpg) no-repeat center center fixed ; background-size: cover;">
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg text-white  bg-dark" >
+        <nav class="navbar navbar-expand-lg text-white  bg-dark">
             <img src="img/logo2.png" alt="" width="70px"><br>
             <h3 class="navbar-brand"> Gestión y mensajería</h3>
         </nav>
-      </div>
-        <div class="row  container-fluid mt-3 ">
-            <div class="col-md-8 mb-3">
-                <form class="form-control bg-light" action="" id="formulario" style="background: url(img/formulario.avif) no-repeat center center fixed ; background-size: cover;">
-                    <div class="d-flex flex-wrap justify-content-between" >
-                        <div class="form-group ">
-                            <label class="form-label text-white" for="entidad">Entidad</label>
-                            <select class="form-control" name="entidad" id="entidad">
-                                <option value="Banco BBVA">Banco BBVA</option>
-                                <option value="Banco Ripley">Banco Ripley</option>
-                                <option value="Caja Arequipa">Caja Arequipa</option>
-                                <option value="Caja Piura">Caja Piura</option>
-                            </select>
-                        </div>
-                        <div class="form-group" id="tipoGestionDiv">
-                            <label for="tipoGestion" class="form-label text-white" >Tipo Gestión</label>
-                            <select class="form-control" name="tipoGestion" id="tipoGestion">
-                                <option value="">Seleccione</option>
-                                <option value="UR-Agencia">UR:Promesa</option>
-                                <!--<option value="UR-Interbancaria">UR:Promesa Ventanilla</option>-->
-                                <!--<option value="TR">TR:Transado</option>-->
-                                <option value="TU">Presentanción Personal</option>
-                                <option value="campaña">Campaña</option>
-                                <option value="recordatorio">Recordatorio</option>
-                                <option value="vencida">Vencida</option>
-                                <option value="solucion">Buscar Contacto</option>
-                               <!-- <option value="relampago">Camp.Relampago</option>-->
-                            </select>
-                        </div>
-                        <div class="form-group" id="codigoDiv">
-                            <label class="form-label text-white" for="codigo">Codigo Cliente</label>
-                            <input class="form-control" type="number" name="codigo" id="codigo">
-                        </div>
-                        <div class="form-group" id="clienteDiv">
-                            <label class="form-label text-white" for="cliente">Cliente</label>
-                            <input type="text" class="form-control" name="cliente" id="cliente">
-                        </div>
-                        <div class="form-group" id="tipoProductoDiv">
-                            <label class="form-label text-white" for="tipo">Tipo Producto</label>
-                            <select class="form-control" name="tipo" id="tipo">
-                                <option value="prestamo">Prestamo</option>
-                                <option value="tarjeta">Tarjeta</option>
-                            </select>
-                        </div>
-                        <div class="form-group" id="numeroProductoDiv">
-                            <label class="form-label text-white" for="numero">Numero Producto</label>
-                            <input type="number" class="form-control" name="numero" id="numero">
-                        </div>
-                        <div class="form-group" id="montoDiv">
-                            <label class="form-label text-white" for="monto">Monto S/.</label>
-                            <input type="number" class="form-control" name="monto" id="monto">
-                        </div>
-                        <div class="form-group" id="telefonoDiv">
-                            <label class="form-label text-white" for="telefono">WhatsApp</label>
-                            <input type="number" class="form-control" name="telefono" id="telefono">
-                        </div>
-                        <div class="form-group" id="fechaDiv">
-                            <label class="form-label text-white" for="fecha">Fecha</label>
-                            <input type="date" class="form-control" name="fecha" id="fecha">
-                        </div>
-                        <div class="form-group" id="mensajesDiv">
-                            <label for="mensajes" class="form-label text-white" >Generador Mensajes</label>
-                            <select class="form-control" name="mensajes" id="mensajesEsta">
-                                <option value="">Seleccione</option>
-                                <option value="rv">Recepcion Voucher</option>
-                                <option value="pd">Pedir DNI/RUC</option>
-                                <option value="si">Sin informacion</option>
-                                <option value="tbi">Transf.Bancaria/Interbancaria</option>
-                                <option value="pv">Pago Ventanilla</option>
-                                <option value="sv">Pedir voucher</option>
-                                <option value="sr">Solicitar Respuesta</option>
-                                <option value="cc">Carta Campaña</option>
-                                <option value="ccm">Carta Campaña Manual</option>
-                                <option value="iup">Informacion UniProducto</option>
-                                <option value="imp">Informacion MultiProducto</option>
-                                <option value="rvta">Reporte Voucher Transf/Agente</option>
-                               <!-- <option value="relampago">Camp.Relampago</option>-->
-                            </select>
-                        </div>
-                        <div class="form-group" id="descripcionDiv">
-                            <label class="form-label text-white" for="descripcion">Descripción</label>
-                            <textarea class="form-control" id="descripcion"></textarea>
-                        </div>
-                        
-                        
+    </div>
+    <div class="row  container-fluid mt-3 ">
+        <div class="col-md-8 mb-3">
+            <form class="form-control bg-light" action="" id="formulario"
+                style="background: url(img/formulario.avif) no-repeat center center fixed ; background-size: cover;">
+                <div class="d-flex flex-wrap justify-content-between">
+                    <div class="form-group ">
+                        <label class="form-label text-white" for="entidad">Entidad</label>
+                        <select class="form-control" name="entidad" id="entidad">
+                            <option value="Banco BBVA">Banco BBVA</option>
+                            <option value="Banco Ripley">Banco Ripley</option>
+                            <option value="Caja Arequipa">Caja Arequipa</option>
+                            <option value="Caja Piura">Caja Piura</option>
+                        </select>
                     </div>
-                    <div>
-                        <input type="submit" class="btn btn-primary" id="btnEnviar" value="Generar">
+                    <div class="form-group" id="tipoGestionDiv">
+                        <label for="tipoGestion" class="form-label text-white">Tipo Gestión</label>
+                        <select class="form-control" name="tipoGestion" id="tipoGestion">
+                            <option value="">Seleccione</option>
+                            <option value="UR-Agencia">UR:Promesa</option>
+                            <!--<option value="UR-Interbancaria">UR:Promesa Ventanilla</option>-->
+                            <!--<option value="TR">TR:Transado</option>-->
+                            <option value="TU">Presentanción Personal</option>
+                            <option value="campaña">Campaña</option>
+                            <option value="recordatorio">Recordatorio</option>
+                            <option value="vencida">Vencida</option>
+                            <option value="solucion">Buscar Contacto</option>
+                            <!-- <option value="relampago">Camp.Relampago</option>-->
+                        </select>
                     </div>
-                </form>
-            </div>
-            <div class="col-md-4 text-center">
-                <div class="container-fluid">
-                    <div class="row">
-                        <textarea class="form-control" id="mensajeGenerado" rows="15"></textarea>
+                    <div class="form-group" id="codigoDiv">
+                        <label class="form-label text-white" for="codigo">Codigo Cliente</label>
+                        <input class="form-control" type="number" name="codigo" id="codigo">
                     </div>
-                    <div class="row text-center">
-                        <button type="button" class="btn btn-primary mt-2" id="copiarMensaje">Copiar</button>
-                        <h1 style="display: none;" id="iconoWhatsApp" class="ml-3"><a href="" target="_blank"
-                                id="linkWhatsApp"><i class="fab fa-whatsapp"></i></a></h1>
+                    <div class="form-group" id="clienteDiv">
+                        <label class="form-label text-white" for="cliente">Cliente</label>
+                        <input type="text" class="form-control" name="cliente" id="cliente">
                     </div>
+                    <div class="form-group" id="tipoProductoDiv">
+                        <label class="form-label text-white" for="tipo">Tipo Producto</label>
+                        <select class="form-control" name="tipo" id="tipo">
+                            <option value="prestamo">Prestamo</option>
+                            <option value="tarjeta">Tarjeta</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="numeroProductoDiv">
+                        <label class="form-label text-white" for="numero">Numero Producto</label>
+                        <input type="number" class="form-control" name="numero" id="numero">
+                    </div>
+                    <div class="form-group" id="montoDiv">
+                        <label class="form-label text-white" for="monto">Monto S/.</label>
+                        <input type="number" class="form-control" name="monto" id="monto">
+                    </div>
+                    <div class="form-group" id="telefonoDiv">
+                        <label class="form-label text-white" for="telefono">WhatsApp</label>
+                        <input type="number" class="form-control" name="telefono" id="telefono">
+                    </div>
+                    <div class="form-group" id="fechaDiv">
+                        <label class="form-label text-white" for="fecha">Fecha</label>
+                        <input type="date" class="form-control" name="fecha" id="fecha">
+                    </div>
+
+                    <div class="form-group" id="descripcionDiv">
+                        <label class="form-label text-white" for="descripcion">Descripción</label>
+                        <textarea class="form-control" id="descripcion"></textarea>
+                    </div>
+
+
                 </div>
-                <span id="respuesta"></span>
+                <div>
+                    <button class="btn btn-primary">Generar</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="container-fluid">
+                <div class="row">
+                    <textarea class="form-control" id="mensajeGenerado" rows="10"></textarea>
+                </div>
+                <div class="row text-center">
+                    <button type="button" class="btn btn-primary mt-2" id="copiarMensaje">Copiar</button>
+                    <h1 style="display: none;" id="iconoWhatsApp" class="ml-3"><a href="" target="_blank"
+                            id="linkWhatsApp"><i class="fab fa-whatsapp"></i></a></h1>
+                </div>
+            </div>
+            <span id="respuesta"></span>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group" id="mensajesDiv">
+                    <form class="form-control"
+                        style="background: url(img/formulario.avif) no-repeat center center fixed ; background-size: cover;">
+
+                        <label for="mensajes" class="form-label text-white">Generador Mensajes Adicionales</label>
+                        <select class="form-control" name="mensajes" id="mensajesEsta">
+                            <option value="">Seleccione</option>
+                            <option value="rv">Recepcion Voucher</option>
+                            <option value="pd">Pedir DNI/RUC</option>
+                            <option value="si">Sin informacion</option>
+                            <option value="tbi">Transf.Bancaria/Interbancaria</option>
+                            <option value="pv">Pago Ventanilla</option>
+                            <option value="sv">Pedir voucher</option>
+                            <option value="sr">Solicitar Respuesta</option>
+                            <option value="cc">Carta Campaña</option>
+                            <option value="ccm">Carta Campaña Manual</option>
+                            <option value="iup">Informacion UniProducto</option>
+                            <option value="imp">Informacion MultiProducto</option>
+                            <option value="rvta">Reporte Voucher Transf/Agente</option>
+                            <!-- <option value="relampago">Camp.Relampago</option>-->
+                        </select>
+
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <textarea class="form-control" id="mensajeGeneradoAdicionales" rows="10"></textarea>
+                <button type="button" class="btn btn-primary mt-2" id="btnCopiarAdicionales">Copiar</button>
             </div>
         </div>
+    </div>
 
-        
-        <div class="container mt-4">
-            <div class="table-bordered table-sm">
-                <table class="table" id="miTabla">
-                    <thead>
-                        <tr>
-                            <th>Código</th>
-                            <th>Teléfono</th>
-                            <th>Fecha</th>
-                            <th>Descripción</th>
-                            <th>Tipo Gestión</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tBody">
-                    </tbody>
 
-                </table>
-            </div>
+    <div class="container mt-4">
+        <div class="table-bordered table-sm">
+            <table class="table" id="miTabla">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Teléfono</th>
+                        <th>Fecha</th>
+                        <th>Descripción</th>
+                        <th>Tipo Gestión</th>
+                    </tr>
+                </thead>
+                <tbody id="tBody">
+                </tbody>
+
+            </table>
         </div>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/2a78e0006b.js" crossorigin="anonymous"></script>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2a78e0006b.js" crossorigin="anonymous"></script>
 
-        <script src="js/inicio.js"></script>
+    <script src="js/inicio.js"></script>
 </body>
 
 </html>
