@@ -1,6 +1,24 @@
+//Recuperando el usuario
+var userName=localStorage.getItem('usuario');
+document.getElementById('mostrarUsuario').textContent=userName;
+
 var mensajeMostrar = document.getElementById('mensajeGenerado');
 var mostrarMsgAdicionales = document.getElementById('mensajeGeneradoAdicionales');
-
+//Animando el texto
+var contenedorEquipo= document.getElementById('contenedorEquipo');
+var texto= document.getElementById('equipo');
+var posX=0;
+var direccion=1;
+var rango=contenedorEquipo.offsetWidth-texto.offsetWidth;
+function moverTexto(){
+    posX +=5*direccion;
+    texto.style.left=posX+"px";
+    if(posX>=rango || posX<=0){
+        direccion*=-1;
+    }
+    setTimeout(moverTexto,100);
+}
+moverTexto();
 //Lista de clientes
 
 var lista = JSON.parse(localStorage.getItem("listaClientes"));
@@ -116,7 +134,7 @@ function mostrarMensaje(cliente) {
         + "\n01140200490000003152 (Dolares)";
     var promesaVentanilla = "Sr(a) *" + cliente.nombres + "* Según lo acordado telefónicamente usted se compromete a efectuar el pago correspondiente a S/. *" + cliente.montoPago + "* el día *" + cliente.fechaPago + "* del producto *" + cliente.tipoProducto + "*  Número de cuenta *" + cliente.numeroProducto + "*.\n"
         + "\nRealice el pago en la agencia del *Banco BBVA* más cercana, donde se dirige a ventanilla indicando el *código pago legal 248* adicionando el número de *su DNI del titular de la cuenta*."
-        + "\n\nQuedo a la espera del envió del voucher a través de este medio. \n\nGracias.";
+        + "\n\nQuedo a la espera del envió del voucher a través de este medio. \n\nAtte:*"+userName+"*\nÁrea Cobranzas";
     var vencida = "Sr(a) *" + cliente.nombres + "* le recordamos que tiene una promesa incumplida con   " + cliente.entidad + " por el monto de S/. *" + cliente.montoPago + "* .\n\nPara que Ud. no pierda los beneficios y su deuda no genere mayor interés, confírmenos su reprogramación para el día de *HOY*. \n\nGracias."
 
     var recordatorio = "Que tal Sr(a) *" + cliente.nombres + "* , " + cliente.entidad + " le recuerda que tiene un compromiso pendiente para el *" + cliente.fechaPago + "* , por el importe de S/.*" + cliente.montoPago + "* , evite el recálculo de su deuda pagando en la fecha establecida.\n\nRealice el pago en la agencia del *Banco BBVA* más cercana, donde se dirige a ventanilla indicando el *código pago legal 248* adicionando el número de *su DNI del titular de la cuenta*.\n\nEnvíar a la brevedad posible la foto de su comprobante para la conformidad. \n\nSaludos Cordiales.";
@@ -126,7 +144,7 @@ function mostrarMensaje(cliente) {
 
     var solucion = "*Banco BBVA*, estimado(a) *" + cliente.nombres + "* confiamos en que se encuentre bien.\nNos comunicamos respecto a la *deuda pendiente* que mantiene con el *Banco BBVA*. Valoramos su compromiso y estamos dispuestos a trabajar juntos para encontrar una solución mutuamente beneficiosa. \n\nEs importante mencionar que, de no recibir respuesta en un plazo razonable, nos veremos en la obligación de evaluar *medidas legales disponibles* para recuperar la deuda en su totalidad. Preferimos evitar este camino y llegar a un *acuerdo amigable* .\n\nLa resolución de esta deuda contribuirá a mejorar su *historial crediticio* y *acceso a futuros créditos*, por lo mismo le instamos a ponerse en contacto a la brevedad posible para discutir opciones de pago y resolver esta situación de manera efectiva.\n\n *Agradecemos su atención y cooperación*.";
     var relampago = "*Banco BBVA* tiene un descuento especial *pre aprobado*, cancela tu producto comunicándote por este medio.\n\nTramite su *constancia de no adeudo* y evite seguir manteniendo un reporte negativo en las centrales de riesgo.\n\nDescuento válido solo por 24 horas.";
-    var transado = "Buen día estimado(a), le saluda *Joel Llacsahuache Copia*, de *Consultores Legales Asociados S.A* con RUC: *20266227192*, por encargo del *Banco BBVA*.\n\nSoy el encargado de su cuenta y estoy a su  disposición para juntos encontrar soluciones de pago, acordes a su situación para evitar las posibles acciones legales que pueda tomar el banco por el tiempo de atraso de su deuda.\n\nSaludos.";
+    var transado = "Buen día Sr(a), le saluda *"+userName+"*, de *Consultores Legales Asociados S.A* con RUC: *20266227192*, por encargo del *Banco BBVA*.\n\nSu expediente migró a esta área para la gestión de cobranza y estamos a su disposición para juntos encontrar soluciones de pago, acordes a su situación evitando la posibilidad que el Banco derive su expediente a una instancia de cobranza mayor por el cobro total de su deuda.\n\nSaludos.";
 
 
     if (cliente.tipoGestion == "UR-Agencia") {
@@ -168,7 +186,7 @@ function mostrarMensaje(cliente) {
 
 document.getElementById('mensajesEsta').addEventListener('change', function (event) {
     var mensajesEstand = event.target.value;
-    var recepcionVoucher = "Buen día estimado(a), hemos recibido la foto del comprobante del pago realizado.\nLuego de *3-10 días hábiles* después de haber enviado la foto del voucher, recibirá en su correo electrónico el *Contrato de Transacción Extrajudicial y Condonación* para que los descargue, imprima, firme y los envié al correo desde donde se le envió.\n\nTiene un plazo máximo de *10 días hábiles* que  envié los documentos firmados al correo.\n\nUna vez que envíe los documentos firmados, en un plazo de *3-7 días hábiles* le estarán enviando la *Carta de no adeudo* a su correo electrónico.\n*Por favor indicar un correo electrónico para remitirle la información dentro del plazo establecido*\n\nSaludos.";
+    var recepcionVoucher = "Buen día estimado(a), hemos recibido la foto del comprobante del pago realizado.\nLuego de *3-10 días hábiles* después de haber enviado la foto del voucher, recibirá en su correo electrónico el *Contrato de Transacción Extrajudicial y Condonación* para que los descargue, imprima, firme y los envié al correo desde donde se le envió.\n\nTiene un plazo máximo de *10 días hábiles* que  envié los documentos firmados al correo.\n\nUna vez que envíe los documentos firmados, en un plazo de *3-7 días hábiles* le estarán enviando la *Carta de no adeudo* a su correo electrónico.\n*Por favor indicar un correo electrónico para remitirle la información dentro del plazo establecido*\n\nAtte:"+userName+"\nÁrea Cobranzas";
     var pedirDocumento = "Estimado/a cliente, para garantizar la seguridad de su cuenta ¿Podría proporcionar su DNI/RUC ,por favor?\n\nEsto nos ayudará a brindarle información más detallada.\n\nGracias por su comprensión.";
     var sinInformacion = "No nos figura información con los datos brindados.\n\nDisculpe la confusión. Nuestro mensaje anterior estaba destinado al titular de la cuenta.\nSi no es el titular, por favor, ignore este mensaje. Indique *EQUIVOCADO* para retirar su número de la base de datos.\n\n¡Gracias por su comprensión!.";
     var transfBanInter = "Si va a realizar el pago por trasferencia bancaria o interbancaria, validar antes de hacer el deposito se realice a la cuenta del:\n*Banco BBVA Perú*  e indicarme el nombre del titular de la cuenta de origen , para enviar a aplicar el pago.";
@@ -176,11 +194,11 @@ document.getElementById('mensajesEsta').addEventListener('change', function (eve
     var pedirVoucher = "Buen día estimado/a , no olvidar remitir el voucher del pago realizado para la conformidad.\n\nSaludos.";
     var solicitarRespuesta = "Buen día estimado/a , necesitamos una respuesta a la brevedad posible, para ayudarlo a  solucionar su deuda que mantiene pendiente con el *Banco BBVA* .\n\nComuníquese por este medio.";
     var cartaCampaña = "*043325003*  Porfavor remitir carta campaña al correo y por este medio. Gracias.";
-    var cartaCampañaManual = "*DORIS DOMINGUEZ ESPINOZA [043431559]*\n\nMonto negociado : *S/.3800*\n\n1° abono :  S./.12000 Fecha  14-03-2024\n2° abono :  S./.5292 Fecha    30-04-2024\n3° abono :  S./.5292 Fecha    30-05-2024\n\nPorfavor remitir carta campaña por este medio y al correo: , porfavor";
-    var uniProducto = "*WILFREDO FLORES CASTREJON*\n\n*Banco BBVA*  Cancela  tu\n\nPRODUCTO *PRÉSTAMOS* nro de cuenta *001108149602643177* con *S/.1382*\n\nComuniquese con su asesor a cargo: Sr. Joel Llacsahuache Copia\n\nSaludos.";
-    var multiProducto = "*ALTERNA BUSINESS SAC*\n\n*Banco BBVA*  Cancela  tus productos:\n\n*PRÉSTAMOS*   nro de cuenta *001104379601937852* con  :  *S/.8399*\n*TARJETAS*   nro de cuenta *001104379602053672* con  : *S/.1600*\n\nComuníquese para gestionar su pago, por este medio.\n\nSaludos.";
+    var cartaCampañaManual = "*[Nombre del cliente]*\n\nMonto negociado : *S/.3800*\n\n1° abono :  S./.12000 Fecha  14-03-2024\n2° abono :  S./.5292 Fecha    30-04-2024\n3° abono :  S./.5292 Fecha    30-05-2024\n\nPorfavor remitir carta campaña por este medio y al correo: , porfavor";
+    var uniProducto = "*WILFREDO FLORES CASTREJON*\n\n*Banco BBVA*  Cancela  tu\n\nPRODUCTO *PRÉSTAMOS* nro de cuenta *001108149602643177* con *S/.1382*\n\nDscto válido solo por 48 horas\n\nComuníquese con su asesor(a) a cargo: Sr(a). *"+userName+"*\n\nSaludos.";
+    var multiProducto = "*ALTERNA BUSINESS SAC*\n\n*Banco BBVA*  Cancela  tus productos:\n\n*PRÉSTAMOS*   nro de cuenta *001104379601937852* con  :  *S/.8399*\n*TARJETAS*   nro de cuenta *001104379602053672* con  : *S/.1600*\n\nDscto válido solo por 48 horas\n\nComuníquese para gestionar su pago, por este medio.\n\nAtte.*"+userName+"*\nÁrea Cobranzas";
     var pagoTransferencia = "*Cod. Deudor*: 043328908\n*Nombre titular* : CARLOS DAVID FELIPE GUERRERO\n*Dni*: 71044564\n*Cta*:  001101609600233724\n*Código central*: 26762486\n*Interb./banc./agente*: TRANSF.INTERBANCARIA INTERBANK\n*Fecha de pago*: 08/03/2024\n*Monto pagado*: S/.1000.00\n*Titular cuenta*: CARLOS DAVID FELIPE GUERRERO";
-
+    var asesorComunicará ="Buen día Sr(a) en breve un asesor se pondrá en contacto con usted.\n\nSaludos";
 
     if (mensajesEstand == "rv") {
         mensaje = recepcionVoucher;
@@ -218,7 +236,11 @@ document.getElementById('mensajesEsta').addEventListener('change', function (eve
     } else if (mensajesEstand == "rvta") {
         mensaje = pagoTransferencia;
         mostrarMsgAdicionales.innerHTML = pagoTransferencia;
-    } else {
+    }else if(mensajesEstand=="vll"){
+        mensaje= asesorComunicará;
+        mostrarMsgAdicionales.innerHTML=asesorComunicará;
+    } 
+    else {
         mensaje = "";
         mostrarMsgAdicionales.innerHTML = "";
     }
