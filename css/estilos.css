@@ -1,0 +1,16 @@
+body{
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#contenedorEquipo {
+    position: relative;
+    width: 300px;
+    height: 100px;
+    overflow: hidden;
+}
+
+#equipo {
+    position: absolute;
+    top: 20%;
+}
