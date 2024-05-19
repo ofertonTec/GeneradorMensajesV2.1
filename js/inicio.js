@@ -183,7 +183,6 @@ function mostrarMensaje(cliente) {
     document.getElementById('formulario').reset();
 }
 
-
 document.getElementById('mensajesEsta').addEventListener('change', function (event) {
     var mensajesEstand = event.target.value;
     var recepcionVoucher = "Buen día estimado(a), hemos recibido la foto del comprobante del pago realizado.\nLuego de *7-13 días hábiles* después de haber enviado la foto del voucher, recibirá en su correo electrónico el *Contrato de Transacción Extrajudicial y Condonación* para que los descargue, imprima, firme y los envié al correo desde donde se le envió.\n\nTiene un plazo máximo de *10 días hábiles* que  envié los documentos firmados al correo.\n\nUna vez que envíe los documentos firmados, en un plazo de *3-10 días hábiles* le estarán enviando la *Carta de no adeudo* a su correo electrónico.\n*Por favor indicar un correo electrónico para remitirle la información dentro del plazo establecido*\n\nAtte:"+userName+"\nÁrea Cobranzas";
