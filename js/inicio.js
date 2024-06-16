@@ -189,16 +189,17 @@ document.getElementById('mensajesEsta').addEventListener('change', function (eve
     var pedirDocumento = "Estimado/a cliente, para garantizar la seguridad de su cuenta ¿Podría proporcionar su DNI/RUC ,por favor?\n\nEsto nos ayudará a brindarle información más detallada.\n\nGracias por su comprensión.";
     var sinInformacion = "No nos figura información con los datos brindados.\n\nDisculpe la confusión. Nuestro mensaje anterior estaba destinado al titular de la cuenta.\nSi no es el titular, por favor, ignore este mensaje. Indique *EQUIVOCADO* para retirar su número de la base de datos.\n\n¡Gracias por su comprensión!.";
     var transfBanInter = "Si va a realizar el pago por trasferencia bancaria o interbancaria, validar antes de hacer el deposito se realice a la cuenta del:\n*Banco BBVA Perú*  e indicarme el nombre del titular de la cuenta de origen , para enviar a aplicar el pago.";
-    var pagoVentanilla = "Realice el pago en la agencia del *Banco BBVA* más cercana, donde se dirige a ventanilla indicando el *código pago legal* 248 adicionando el número de *su DNI del titular de la cuenta*.";
-    var pedirVoucher = "Buen día estimado/a , no olvidar remitir el voucher del pago realizado para la conformidad.\n\nSaludos.";
-    var solicitarRespuesta = "Buen día estimado/a , necesitamos una respuesta a la brevedad posible, para ayudarlo a  solucionar su deuda que mantiene pendiente con el *Banco BBVA* .\n\nComuníquese por este medio.";
+    var pagoVentanilla = "Si va a realizar el pago en ventanilla del *Banco BBVA* más cercana, indique en ventanilla  *CODIGO PAGO LEGAL 248*  adicionando el número del *DNI del titular de la cuenta*.";
+    var pedirVoucher = "Buen día estimado cliente , no olvidar remitir la foto del comprobante del pago realizado para la conformidad.\n\nSaludos.";
     var cartaCampaña = "*043325003*  Porfavor remitir carta campaña al correo y por este medio. Gracias.";
     var cartaCampañaManual = "*[Nombre del cliente]*\n\nMonto negociado : *S/.3800*\n\n1° abono :  S./.12000 Fecha  14-03-2024\n2° abono :  S./.5292 Fecha    30-04-2024\n3° abono :  S./.5292 Fecha    30-05-2024\n\nPorfavor remitir carta campaña por este medio y al correo: , porfavor";
     var uniProducto = "*WILFREDO FLORES CASTREJON*\n\n*Banco BBVA*  Cancela  tu\n\nPRODUCTO *PRÉSTAMOS* nro de cuenta *001108149602643177* con *S/.1382*\n\nDscto válido solo por 48 horas\n\nComuníquese con su asesor(a) a cargo: Sr(a). *"+userName+"*\n\nSaludos.";
     var multiProducto = "*ALTERNA BUSINESS SAC*\n\n*Banco BBVA*  Cancela  tus productos:\n\n*PRÉSTAMOS*   nro de cuenta *001104379601937852* con  :  *S/.8399*\n*TARJETAS*   nro de cuenta *001104379602053672* con  : *S/.1600*\n\nDscto válido solo por 48 horas\n\nComuníquese para gestionar su pago, por este medio.\n\nAtte.*"+userName+"*\nÁrea Cobranzas";
     var pagoTransferencia = "*Cod. Deudor*: 043328908\n*Nombre titular* : CARLOS DAVID FELIPE GUERRERO\n*Dni*: 71044564\n*Cta*:  001101609600233724\n*Código central*: 26762486\n*Interb./banc./agente*: TRANSF.INTERBANCARIA INTERBANK\n*Fecha de pago*: 08/03/2024\n*Monto pagado*: S/.1000.00\n*Titular cuenta*: CARLOS DAVID FELIPE GUERRERO";
     var asesorComunicará ="Buen día Sr(a) en breve un asesor se pondrá en contacto con usted.\n\nSaludos";
-
+    var solicitarRespuesta="Estimado cliente\n\nNos dirigimos a usted en relación a la propuesta brindada para la solución de su deuda pendiente con el *Banco BBVA*.Es importante que se comunique con nosotros de inmediato para confirmar su aceptación o discutir cualquier ajuste.\n\nSu pronta respuesta es necesaria para evitar las posibles acciones adicionales.\n\nAtte:*Área Cobranzas*"
+    var promesaUniProducto="Sr(a) **, según lo acordado telefónicamente usted se compromete a realizar el pago el **, de su Producto *PRESTAMO* nro de cuenta ** el importe de  S/.**.\n\nRealice el pago en ventanilla indicando *CODIGO PAGO LEGAL 248* adicionando el nro de *DNI del titular de la cuenta*.\n\nNo se olvide enviarnos las fotos de los comprobantes para la conformidad, por este medio.\n\nAtte:*Joel Llacsahuache*\nÁrea de Cobranzas"
+    var promesaMultiProducto="Sr(a) **, según lo acordado telefónicamente usted se compromete a realizar los siguientes pagos el **:\n\nProducto *PRESTAMO* nro de cuenta ** importe S/.**.\nProducto *TARJETA* nro de cuenta ** importe S/.**.\n\nRealice el pago en ventanilla indicando *CODIGO PAGO LEGAL 248* adicionando el nro de *DNI del titular de la cuenta*.\n\nNo se olvide enviarnos las fotos de los comprobantes para la conformidad, por este medio.\n\nAtte:*Joel Llacsahuache*\nÁrea de Cobranzas"
     if (mensajesEstand == "rv") {
         mensaje = recepcionVoucher;
         mostrarMsgAdicionales.innerHTML = recepcionVoucher;
@@ -238,7 +239,13 @@ document.getElementById('mensajesEsta').addEventListener('change', function (eve
     }else if(mensajesEstand=="vll"){
         mensaje= asesorComunicará;
         mostrarMsgAdicionales.innerHTML=asesorComunicará;
-    } 
+    }else if(mensajesEstand=="promesaUni"){
+        mensaje=promesaUniProducto;
+        mostrarMsgAdicionales.innerHTML=promesaUniProducto;
+    }else if(mensajesEstand=="promesaMult"){
+        mensaje=promesaMultiProducto;
+        mostrarMsgAdicionales.innerHTML=promesaMultiProducto;
+    }
     else {
         mensaje = "";
         mostrarMsgAdicionales.innerHTML = "";
