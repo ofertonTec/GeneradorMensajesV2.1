@@ -200,6 +200,7 @@ document.getElementById('mensajesEsta').addEventListener('change', function (eve
     var solicitarRespuesta="Estimado cliente\n\nNos dirigimos a usted en relación a la propuesta brindada para la solución de su deuda pendiente con el *Banco BBVA*.Es importante que se comunique con nosotros de inmediato para confirmar su aceptación o discutir cualquier ajuste.\n\nSu pronta respuesta es necesaria para evitar las posibles acciones adicionales.\n\nAtte:*Área Cobranzas*"
     var promesaUniProducto="Sr(a) **, según lo acordado telefónicamente usted se compromete a realizar el pago el **, de su Producto *PRESTAMO* nro de cuenta ** el importe de  S/.**.\n\nRealice el pago en ventanilla indicando *CODIGO PAGO LEGAL 248* adicionando el nro de *DNI del titular de la cuenta*.\n\nNo se olvide enviarnos las fotos de los comprobantes para la conformidad, por este medio.\n\nAtte:*Joel Llacsahuache*\nÁrea de Cobranzas"
     var promesaMultiProducto="Sr(a) **, según lo acordado telefónicamente usted se compromete a realizar los siguientes pagos el **:\n\nProducto *PRESTAMO* nro de cuenta ** importe S/.**.\nProducto *TARJETA* nro de cuenta ** importe S/.**.\n\nRealice el pago en ventanilla indicando *CODIGO PAGO LEGAL 248* adicionando el nro de *DNI del titular de la cuenta*.\n\nNo se olvide enviarnos las fotos de los comprobantes para la conformidad, por este medio.\n\nAtte:*Joel Llacsahuache*\nÁrea de Cobranzas"
+    var formasPago="*CANALES DE PAGO*\n\n1.- *DEPOSITO VÍA VENTANILLA*\n\nPAGO LEGAL AL SERVICIO:\n*248(SOLES)*\n*249(DÓLARES)*\n\n-PRECISAR DNI/RUC +NOMBRE\n\n2.-*DEPÓSITO VIA TRANSFERENCIA BANCARIA/INTERBANCARIA*\n\n*CUENTA BANCARIA BBVA*\n001104024900000023-(SOLES)\n001104024900000031-(DÓLARES)\n\n*CUENTA INTERBANCARIA BBVA*\n01140200490000002359-(SOLES)\n01140200490000003152-(DÓLARES)\n\n*_Validar que la cuenta este a nombre del BANCO BBVA PERÚ_*";
     if (mensajesEstand == "rv") {
         mensaje = recepcionVoucher;
         mostrarMsgAdicionales.innerHTML = recepcionVoucher;
@@ -245,6 +246,10 @@ document.getElementById('mensajesEsta').addEventListener('change', function (eve
     }else if(mensajesEstand=="promesaMult"){
         mensaje=promesaMultiProducto;
         mostrarMsgAdicionales.innerHTML=promesaMultiProducto;
+    }
+    else if(mensajesEstand=="formasPago"){
+        mensaje=formasPago;
+        mostrarMsgAdicionales.innerHTML=formasPago;
     }
     else {
         mensaje = "";
